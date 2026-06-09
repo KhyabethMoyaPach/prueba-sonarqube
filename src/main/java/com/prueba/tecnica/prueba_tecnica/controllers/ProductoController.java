@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.prueba.tecnica.prueba_tecnica.dto.FoodDto;
 import com.prueba.tecnica.prueba_tecnica.entities.Food;
 import com.prueba.tecnica.prueba_tecnica.services.FoodService;
+import com.prueba.tecnica.prueba_tecnica.services.OrderService;
 
 import java.util.List;
 
@@ -26,6 +27,8 @@ public class ProductoController {
 
     @Autowired
     private FoodService service;
+    @Autowired
+    private OrderService orderService;
 
 
     @PostMapping
@@ -45,7 +48,7 @@ public class ProductoController {
 
     @PostMapping("/{id}/order")
     public ResponseEntity<?> addToOrder(@PathVariable Long id) {
-        return ResponseEntity.ok(service.likeFood(id));
+        return ResponseEntity.ok(orderService.addToOrder(id));
     }
     
     

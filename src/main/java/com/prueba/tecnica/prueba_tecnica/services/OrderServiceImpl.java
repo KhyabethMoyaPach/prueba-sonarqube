@@ -39,6 +39,7 @@ public class OrderServiceImpl implements OrderService{
                 detail.setQuantity(detail.getQuantity() + 1);
                 detail.setSubtotal(food.getPrice().multiply(BigDecimal.valueOf(detail.getQuantity())));
             }
+            order.getOrderDetail().add(detail);
             detailRepo.save(detail);
 
             updateTotal(order);

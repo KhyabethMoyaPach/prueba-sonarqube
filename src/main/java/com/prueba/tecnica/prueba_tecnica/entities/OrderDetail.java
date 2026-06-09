@@ -2,6 +2,8 @@ package com.prueba.tecnica.prueba_tecnica.entities;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +20,7 @@ public class OrderDetail {
     private Long id;
 
     @ManyToOne
+    @JsonIgnoreProperties("orderDetail")
     private Order order;
 
     @ManyToOne
