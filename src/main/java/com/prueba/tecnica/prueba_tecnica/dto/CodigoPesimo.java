@@ -4,6 +4,7 @@ public class CodigoPesimo {
 
     public static String nombreGlobal = "";
     public static int contador = 0;
+    public static int contador2 = 0;
 
     public static void main(String[] args) {
 
